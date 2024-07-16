@@ -4,10 +4,124 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/css/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Tip Calculator</title>
   </head>
-  <body>
-    <h1 class="font-sora font-bold">Say hi!</h1>
-    <p>hi</p>
+  <body
+    class="grid min-h-[100dvh] place-items-center bg-blue-200 font-sora text-black"
+  >
+    <main class="bg-offWhite w-[21.875rem] rounded-xl p-4">
+      <!-- Title -->
+      <div class="mb-4 flex items-center justify-between">
+        <h1 class="text-base font-semibold">Calculate Tip</h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-5 w-5 text-gray-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </div>
+
+      <!-- Info Card -->
+      <section
+        class="flex flex-col items-center gap-y-4 rounded-xl bg-blue-100 p-3"
+      >
+        <div class="flex flex-col items-center gap-y-2">
+          <p class="text-xs opacity-50">Total per person</p>
+          <p id="totalPerPerson" class="text-primaryBlue text-xl font-semibold">
+            $ 00.00
+          </p>
+        </div>
+        <div class="flex gap-x-16">
+          <div class="flex flex-col items-center gap-y-0.5">
+            <p class="text-xs opacity-50">Total Bill</p>
+            <p id="labelTotalBill" class="text-xs font-semibold">$ 00.00</p>
+          </div>
+          <div class="flex flex-col items-center gap-y-0.5">
+            <p class="text-xs opacity-50">Total Tip</p>
+            <p id="labelTotalTip" class="text-xs font-semibold">$ 00.00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secondary Card -->
+      <section class="flex flex-col gap-y-4 p-4">
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-medium">Enter bill total</p>
+          <div
+            class="flex h-5 w-40 items-center justify-between rounded-md px-1 text-xs outline outline-1 outline-blue-200"
+          >
+            <label class="opacity-30" for="bill-total">$</label>
+            <input id="inputBillTotal" type="number" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-y-4">
+          <!-- Slider Tip  -->
+          <div class="flex flex-col gap-y-2">
+            <p class="text-xs font-medium">Tip</p>
+            <label
+              id="labelRangeTip"
+              class="self-end text-xs text-gray-500"
+              for="tip-range"
+              >5%</label
+            >
+            <input id="tip-range" type="range" min="0" max="15" value="5" />
+          </div>
+
+          <!-- Slider Split -->
+          <div class="flex flex-col gap-y-2">
+            <p class="text-xs font-medium">Split</p>
+            <label
+              id="labelRangeSplit"
+              class="self-end text-xs text-gray-500"
+              for="tip-range"
+              >5 persons</label
+            >
+            <input id="split-range" type="range" min="1" max="10" value="5" />
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium">Split Total</p>
+            <p id="labelSplitTotal" class="text-xl font-medium text-gray-500">
+              $ 00.00
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="flex items-center justify-between px-4">
+        <button
+          id="btnRoundUp"
+          class="bg-primaryBlue text-offWhite w-32 rounded-lg border-none py-2 text-center text-xs font-medium outline-none hover:opacity-90"
+        >
+          Round Up
+        </button>
+
+        <button
+          id="btnRoundDown"
+          class="bg-primaryBlue text-offWhite w-32 rounded-lg border-none py-2 text-center text-xs font-medium outline-none hover:opacity-90"
+        >
+          Round Down
+        </button>
+      </div>
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>

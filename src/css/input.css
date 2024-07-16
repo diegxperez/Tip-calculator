@@ -1,4 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@fontsource/sora";
+
+input[type="range"] {
+  @apply h-1 w-full cursor-pointer appearance-none rounded-lg bg-gray-300 opacity-70 transition-opacity;
+}
+
+input[type="range"]:hover {
+  @apply opacity-100;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply bg-paleYellow h-4 w-4 cursor-pointer rounded-full shadow;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply bg-paleYellow h-4 w-4 cursor-pointer rounded-full shadow;
+}
+
+input[type="range"]::-ms-thumb {
+  @apply bg-paleYellow h-4 w-4 cursor-pointer rounded-full shadow;
+}
+
+input[type="number"] {
+  @apply appearance-none text-right text-slate-900 outline-none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
