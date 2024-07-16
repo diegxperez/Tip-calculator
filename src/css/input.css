@@ -24,7 +24,7 @@ input[type="range"]::-ms-thumb {
 }
 
 input[type="number"] {
-  @apply appearance-none text-right text-slate-900 outline-none;
+  @apply w-36 appearance-none text-right text-slate-900 outline-none;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
